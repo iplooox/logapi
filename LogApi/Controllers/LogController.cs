@@ -19,6 +19,12 @@ public class LogController : ControllerBase
     {
         return new LogResponse() {Success = true};
     }
+    
+    [HttpPost("batch")]
+    public LogResponse LogItBatch(LogEntryDto[] entries)
+    {
+        return new LogResponse() {Success = true};
+    }
 }
 
 public class LogResponse
