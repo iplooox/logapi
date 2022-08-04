@@ -1,3 +1,4 @@
+using LogApi.RequestDtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LogApi.Controllers;
@@ -6,15 +7,15 @@ namespace LogApi.Controllers;
 [Route("[controller]")]
 public class LogController : ControllerBase
 {
-    private readonly ILogger<WeatherForecastController> _logger;
+    private readonly ILogger<LogController> _logger;
 
-    public LogController(ILogger<WeatherForecastController> logger)
+    public LogController(ILogger<LogController> logger)
     {
         _logger = logger;
     }
 
     [HttpPost()]
-    public LogResponse LogIt()
+    public LogResponse LogIt(LogEntryDto entry)
     {
         return new LogResponse() {Success = true};
     }
