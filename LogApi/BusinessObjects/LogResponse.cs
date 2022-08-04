@@ -2,6 +2,11 @@
 
 public class LogResponse
 {
+    public LogResponse(bool success)
+    {
+        Success = success;
+    }
+
     public LogResponse(bool success, string error)
     {
         Success = success;
