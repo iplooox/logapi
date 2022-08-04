@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogApi", "LogApi\LogApi.csproj", "{4E26C965-0002-40C4-9A1C-A355B53C7C5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogApiTests", "LogApiTests\LogApiTests.csproj", "{CF3E7370-B2B7-4449-9747-ACA9BFBBCF27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{4E26C965-0002-40C4-9A1C-A355B53C7C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E26C965-0002-40C4-9A1C-A355B53C7C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E26C965-0002-40C4-9A1C-A355B53C7C5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF3E7370-B2B7-4449-9747-ACA9BFBBCF27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF3E7370-B2B7-4449-9747-ACA9BFBBCF27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF3E7370-B2B7-4449-9747-ACA9BFBBCF27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF3E7370-B2B7-4449-9747-ACA9BFBBCF27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
