@@ -1,3 +1,5 @@
+using LogApi.BusinessObjects.Configuration;
+using LogApi.BusinessObjects.Loggers;
 using LogApi.RequestDtos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,27 +9,28 @@ namespace LogApi.Controllers;
 [Route("[controller]")]
 public class LogController : ControllerBase
 {
-    private readonly ILogger<LogController> _logger;
-
-    public LogController(ILogger<LogController> logger)
+    private readonly ILogApiLogger _logger;
+    public LogController(ILogApiLogger logger)
     {
         _logger = logger;
     }
 
     [HttpPost()]
-    public LogResponse LogIt(LogEntryDto entry)
+    public LogResponseDto LogIt(LogEntryDto entry)
     {
-        return new LogResponse() {Success = true};
+        LogResponse response = _logger.Log(entry);
+        return new LogResponseDto() {Success = response.Success, Error = response.Error};
     }
-    
+
     [HttpPost("batch")]
-    public LogResponse LogItBatch(LogEntryDto[] entries)
+    public LogResponseDto LogItBatch(LogEntryDto[] entries)
     {
-        return new LogResponse() {Success = true};
+        LogResponse response = _logger.Log(entries);
+        return new LogResponseDto() {Success = response.Success, Error = response.Error};
     }
 }
 
-public class LogResponse
+public class LogResponseDto
 {
     public bool Success { get; set; }
     public string? Error { get; set; }
