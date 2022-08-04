@@ -2,7 +2,7 @@
 
 namespace LogApi.BusinessObjects.Loggers;
 
-public interface ILogger
+public interface ILogApiLogger
 {
     LogDestination Destination { get; }
     LogResponse Log();

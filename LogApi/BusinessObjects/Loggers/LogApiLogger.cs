@@ -2,9 +2,9 @@
 
 namespace LogApi.BusinessObjects.Loggers;
 
-public abstract class Logger : ILogger
+public abstract class LogApiLogger : ILogApiLogger
 {
-    protected Logger(LogDestination destination)
+    protected LogApiLogger(LogDestination destination)
     {
         Destination = destination;
     }

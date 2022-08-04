@@ -2,9 +2,9 @@
 
 namespace LogApi.BusinessObjects.Loggers;
 
-public class KafkaLogger : Logger
+public class RabbitMqLogApiLogger : LogApiLogger
 {
-    public KafkaLogger() : base(LogDestination.Kafka)
+    public RabbitMqLogApiLogger() : base(LogDestination.RabbitMQ)
     {
     }
 

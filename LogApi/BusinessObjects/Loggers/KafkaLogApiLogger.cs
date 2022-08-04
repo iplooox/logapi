@@ -2,9 +2,9 @@
 
 namespace LogApi.BusinessObjects.Loggers;
 
-public class FlatFileLogger : Logger
+public class KafkaLogApiLogger : LogApiLogger
 {
-    public FlatFileLogger() : base(LogDestination.FlatFile)
+    public KafkaLogApiLogger() : base(LogDestination.Kafka)
     {
     }
 

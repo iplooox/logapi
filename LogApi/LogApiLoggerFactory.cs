@@ -1,21 +1,20 @@
 ﻿using LogApi.BusinessObjects.Loggers;
 using LogApi.Enums;
-using ILogger = LogApi.BusinessObjects.Loggers.ILogger;
 
 namespace LogApi;
 
-public static class LoggerFactory
+public static class LogApiLoggerFactory
 {
-    public static ILogger CreateLogger(LogDestination destination)
+    public static ILogApiLogger CreateLogger(LogDestination destination)
     {
         switch (destination)
         {
             case LogDestination.Kafka:
-                return new KafkaLogger();
+                return new KafkaLogApiLogger();
             case LogDestination.FlatFile:
-                return new FlatFileLogger();
+                return new FlatFileLogApiLogger();
             case LogDestination.RabbitMQ:
-                return new RabbitMqLogger();
+                return new RabbitMqLogApiLogger();
             default:
                 throw new ArgumentException($"Cannot create Logger for type {destination}", nameof(destination));
         }

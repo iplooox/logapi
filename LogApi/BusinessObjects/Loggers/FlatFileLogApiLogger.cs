@@ -2,9 +2,9 @@
 
 namespace LogApi.BusinessObjects.Loggers;
 
-public class RabbitMqLogger : Logger
+public class FlatFileLogApiLogger : LogApiLogger
 {
-    public RabbitMqLogger() : base(LogDestination.RabbitMQ)
+    public FlatFileLogApiLogger() : base(LogDestination.FlatFile)
     {
     }
 

@@ -12,9 +12,9 @@ public class LoggersTests
     [Fact]
     public void LoggerSuccessfullyGetCreatedAndLog()
     {
-        ILogger[] loggers = {new KafkaLogger(), new FlatFileLogger(), new RabbitMqLogger()};
+        ILogApiLogger[] loggers = {new KafkaLogApiLogger(), new FlatFileLogApiLogger(), new RabbitMqLogApiLogger()};
 
-        foreach (ILogger logger in loggers)
+        foreach (ILogApiLogger logger in loggers)
         {
             LogResponse logResponse = logger.Log();
 
@@ -33,7 +33,7 @@ public class LoggersTests
     {
         LogDestination destination = (LogDestination)destinationInput;
 
-        var createLogger = () => LoggerFactory.CreateLogger(destination);
+        var createLogger = () => LogApiLoggerFactory.CreateLogger(destination);
 
         if (!_allowedLoggerTypes.Contains(destinationInput))
         {
@@ -41,20 +41,20 @@ public class LoggersTests
             return;
         }
         
-        ILogger logger = LoggerFactory.CreateLogger(destination);
+        ILogApiLogger logApiLogger = LogApiLoggerFactory.CreateLogger(destination);
 
-        logger.Destination.Should().Be(destination);
+        logApiLogger.Destination.Should().Be(destination);
 
         switch (destination)
         {
             case LogDestination.Kafka:
-                (logger is KafkaLogger).Should().BeTrue();
+                (logApiLogger is KafkaLogApiLogger).Should().BeTrue();
                 break;
             case LogDestination.FlatFile:
-                (logger is FlatFileLogger).Should().BeTrue();
+                (logApiLogger is FlatFileLogApiLogger).Should().BeTrue();
                 break;
             case LogDestination.RabbitMQ:
-                (logger is RabbitMqLogger).Should().BeTrue();
+                (logApiLogger is RabbitMqLogApiLogger).Should().BeTrue();
                 break;
         }
     }
