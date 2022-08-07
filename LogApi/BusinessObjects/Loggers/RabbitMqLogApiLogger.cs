@@ -11,6 +11,7 @@ public class RabbitMqLogApiLogger : LogApiLogger
 
     public override LogResponse Log(params LogEntryDto[] logEntryDtos)
     {
+        // Here go the implementation for Mq topic.
         return new LogResponse(true);
     }
 }

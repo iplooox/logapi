@@ -11,6 +11,7 @@ public class KafkaLogApiLogger : LogApiLogger
 
     public override LogResponse Log(params LogEntryDto[] logEntryDtos)
     {
+        // Here go the implementation for Kafka topic.
         return new LogResponse(true);
     }
 }

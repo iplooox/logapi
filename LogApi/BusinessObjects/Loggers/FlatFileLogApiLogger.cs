@@ -11,6 +11,7 @@ public class FlatFileLogApiLogger : LogApiLogger
 
     public override LogResponse Log(params LogEntryDto[] logEntryDtos)
     {
+        // Here go the implementation for Flat file.
         return new LogResponse(true);
     }
 }
