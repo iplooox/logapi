@@ -1,8 +1,9 @@
-| Tables        |      Are      |  Cool |
-| ------------- | :-----------: | ----: |
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      |   centered    |   $12 |
-| zebra stripes |   are neat    |    $1 |
+| Label        | #Samples | Average ms | Min ms | Max ms | Error % |
+| ------------ | -------- | ---------- | ------ | ------ | ------- |
+| 10 Users     | 10       | 3          | 0      | 32     | 0       |
+| 100 Users    | 100      | 0          | 0      | 17     | 0       |
+| 1000 Users   | 1000     | 0          | 0      | 25     | 0       |
+| 100000 Users | 100000   | 0          | 0      | 22     | 0       |
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
