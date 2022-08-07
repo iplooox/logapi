@@ -16,6 +16,8 @@ builder.Services.AddSingleton<ILogConfigurationProvider, LogConfigurationProvide
 // Would have to take into consideration at what point is the config changing.
 // If we just use primitive appsettings.json like POC then singleton is better
 // But if it can be changed dynamically in database without restarting site, then this is more safe.
+// Otherwise perhaps a strategy on the logger would be even better pattern here.
+// Where instead of changing the logger we just swap strategy.
 builder.Services.AddTransient<ILogApiLogger>(x =>
 {
     var configProvider = (ILogConfigurationProvider)x.GetService(typeof(ILogConfigurationProvider));
