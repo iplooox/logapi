@@ -9,8 +9,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddMemoryCache();
 
-builder.Services.AddSingleton<ILogConfigurationProvider, LogLogConfigurationProvider>();
+builder.Services.AddSingleton<ILogConfigurationProvider, LogConfigurationProvider>();
 // We could have probably better performance if this was singleton.
 // Would have to take into consideration at what point is the config changing.
 // If we just use primitive appsettings.json like POC then singleton is better
